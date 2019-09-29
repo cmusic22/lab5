@@ -40,9 +40,9 @@
   })
 
   //event listener for color of drawing
-  color.addEventListener('input', function(){
-    let cl = this.value;
-    context.fillStyle = cl;
+  color.addEventListener('input', function(){ 
+    let cl = this.value;//sets color value
+    context.fillStyle = cl; //sets fill color of circle style 
     console.log('color recived');
   })
   
@@ -51,9 +51,10 @@
     context.arc(rg, rg, 50, 0, 2 * Math.PI);
     console.log('range recived');
   })*/
-range.addEventListener('input', function(){
-      let rg = this.value;
-      console.log('range recived');
+range.addEventListener('input', function(){ //listens for range input
+      let rg = this.value;//sets range input
+      console.log('range recived');//logs that input was recived
+
   canvas.addEventListener("mousemove", function() {
      
     if (!mousedown) { return; }
@@ -66,9 +67,9 @@ range.addEventListener('input', function(){
      //Draw a filled rectangle centered under the mouse click
      //x, y is the top left corner, so shift up and left by 5 to center it under the mouse.
      
-     //context.fillRect(x-5, y-5, 10, 10);
+     
     context.beginPath();
-    context.arc(x-5, y-5, rg, rg, 50, 0, 2 * Math.PI); //, 10, 10, 50, 0, 2 * Math.PI)
+    context.arc(x-5, y-5, rg, rg, 50, 0, 2 * Math.PI); //sets range of circle
     context.fill();
     })
   })
