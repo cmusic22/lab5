@@ -46,3 +46,4 @@ bridges.forEach(function(bridge){
 	let bridgeMarker = L.marker(latLong).bindPopup('Bridg Name: ' + bridge.bridgeName + '<br> Span: ' + bridge.span + 'm').addTo(usMap)
 	console.log('bridge marker added')
   })
+module.exports = bridges
