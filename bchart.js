@@ -1,6 +1,8 @@
 // Get chart canvas and contex
 let chartCanvas = document.querySelector('#bridge-bar-chart');
 let contex = chartCanvas.getContext('2d');
+
+//copied bridge array from bridge-maps.js to make the page work
 let bridges = [
 	{bridgeName: 'Verrazano-Narrows Bridge', 
 	 cityState: 'New York, NY',
@@ -46,6 +48,8 @@ let spanChart = new Chart(contex,{
 let barColors = [ 'black', 'lightgreen', 'yellow', 'tomato', 'lightbrown'];
 console.log('color array created');
 
+/***Code I tried to use to get the bridges array objects from
+the bridge-maps.js file***/
 //let bridgeMaps = require('./bridge-maps')
 //let bridgesArray = bridgeMaps.bridges
 

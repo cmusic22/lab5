@@ -10,7 +10,13 @@ id: 'mapbox.streets',
 accessToken: 'pk.eyJ1IjoiY211c2ljMjIiLCJhIjoiY2sweThnYWJhMGRkMzNjbWlnamt1OWZ2bSJ9.vRXisZtBmgcftSToYLKudg'
 }).addTo(usMap)
 
+/*Bridge Icon*/
+let bridgeIcon = L.icon({
+	iconUrl: 'bridge.png',
+	iconSize: [25, 35] //size of the icon
+})
 
+//Bridges Array
 let bridges = [
 	{bridgeName: 'Verrazano-Narrows Bridge', 
 	 cityState: 'New York, NY',
@@ -39,11 +45,14 @@ let bridges = [
 	 long: -122.5517} 
 ]
 console.log('bridge array objects loaded')
+
 //creates bridge markers with names and spans displaed
 bridges.forEach(function(bridge){
   	let latLong = [bridge.lat, bridge.long]
 	console.log('bridge location extracted ' + latLong)
-	let bridgeMarker = L.marker(latLong).bindPopup('Bridg Name: ' + bridge.bridgeName + '<br> Span: ' + bridge.span + 'm').addTo(usMap)
+	let bridgeMarker = L.marker(latLong, {icon: bridgeIcon}).bindPopup('Bridg Name: ' + bridge.bridgeName + '<br> Span: ' + bridge.span + 'm').addTo(usMap)
 	console.log('bridge marker added')
   })
-module.exports = bridges
+
+module.exports = bridges //trying to export bridges array object 
+						 //to be able to use in another file
